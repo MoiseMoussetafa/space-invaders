@@ -1,6 +1,7 @@
 # Space Invaders
 
-Il s'agit d'un jeu Space Invaders, en microPython sur la carte électronique STM32F407G-DISC1.
+Il s'agit d'un jeu Space Invaders, en microPython sur la carte électronique STM32F407G-DISC1.  
+
 ![image](https://user-images.githubusercontent.com/72506988/119268372-f281ba80-bbf2-11eb-9806-0e0ea20bcd89.png)
 
 
@@ -20,7 +21,7 @@ Placer un jumper entre VDD et BOOT0 pour activer le mode DFU, puis brancher la c
 - `python pydfu.py --list` La liste des périphériques en mode DFU apparait.
 - `python pydfu.py --upload STM32F4DISC-20210222-v1.14.dfu` Le nom du fichier est à adapter, il suffit de taper `STM32` puis de cliquer sur la touche TAB du clavier pour que le fichier de flashage téléchargé se sélectionne automatiquement.
 
-Une fois le flashage terminé, remplacer les fichiers **boot.py** et **main.py** de la carte flashée apparaissant comme une clé USB par ceux présents dans ce repo.
+Une fois le flashage terminé, placer les fichiers **.py** présents dans ce repo dans la carte flashée apparaissant comme une clé USB sur le PC (Remplacer si demandé).
 
 ---
 
