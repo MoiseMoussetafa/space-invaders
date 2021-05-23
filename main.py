@@ -114,10 +114,6 @@ class Ennemies():
         else:
             self.x = self.x + self.dir
             MoveWrite(uart, self.x, self.y, " |++X++| ")
-            
-    def GameOver(self, y):
-        if (self.y >= 5):
-            vt100.clear_screen(uart)
         
         # DEBUG
         print(self.x, self.y)
