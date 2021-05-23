@@ -47,4 +47,4 @@ La carte doit également être connectée au PC par ses connecteurs mini et micr
 
 ![image](https://user-images.githubusercontent.com/72506988/119268551-c3b81400-bbf3-11eb-8312-23051fa8f0ea.png)
 
-Redémarrer une partie en appuyant sur le bouton RESET de la carte*
+Redémarrer une partie en appuyant sur le bouton RESET de la carte
