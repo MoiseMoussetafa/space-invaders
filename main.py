@@ -119,7 +119,6 @@ class Ennemies():
         if (self.y >= 5):
             vt100.clear_screen(uart)
         
-
         # DEBUG
         print(self.x, self.y)
 
@@ -143,36 +142,38 @@ CS.high()
 # MAX DIMENSIONS
 MAX_WIDTH = 90
 MAX_HEIGHT = 40
+
+# Max dimensions /2
 posX = 45
 posY = 20
 
-lose = 40 # LOSE limit
+# LOSE line limit
+lose = 40
 
-uart.write("\x1b" + "[2J" + "\x1b" + "[?25l")
+##########################################################################
+
 vt100.clear_screen(uart)
 SetBorders() 
 
 Fleet = [0,0,0,0,0]
 initFleet(Fleet)
 
-##########################################################################
-
 while True:
 
-    result = get_axis(uart,0x28)
+    result = get_axis(uart, 0x28)
     if (result >= 0.25):
-        leds[0].off()
-        leds[1].on()
-        posX += 1
-    elif (result <= -0.25):
         leds[0].on()
         leds[1].off()
+        posX += 1
+    elif (result <= -0.25):
+        leds[0].off()
+        leds[1].on()
         posX -= 1
     else:
         leds[0].off()
         leds[1].off()
 
-    if (83 >= posX >= 5):
+    if (MAX_WIDTH-7 >= posX >= 2):
         Spaceship(posX, MAX_HEIGHT-1)
 
     for i in range(5):
@@ -185,6 +186,7 @@ while True:
             MoveWrite(uart, posX+3, -i, " ")
         wait_pin_change(push_button, 0)
 
+    # IF LOSE
     if (Fleet[0].y >= lose):
         vt100.clear_screen(uart)
         vt100.move(uart, posX, posY)
