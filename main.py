@@ -1,5 +1,5 @@
 # main.py -- put your code here!
-from pyb import  SPI, Pin
+from pyb import SPI, Pin
 import pyb
 import vt100
 
@@ -69,10 +69,8 @@ def SetBorders():
         vt100.move(uart, MAX_WIDTH, i)
         uart.write("\u2551")
 
-    # UP and DOWN
+    # DOWN
     for i in range (1, MAX_WIDTH):
-        vt100.move(uart, i, 1)
-        uart.write("\u2550")
         vt100.move(uart, i, MAX_HEIGHT)
         uart.write("\u2550")
 
@@ -99,23 +97,23 @@ class Ennemies():
         self.x = x
         self.y = y
         self.dir = dir 
-        MoveWrite(uart, (self.x)-4, self.y," |++U++| ")
+        MoveWrite(uart, self.x, self.y," |++X++| ")
     def Moving(self):
         if (self.x >= 80):
             self.dir = -1
             self.x = self.x + self.dir
             MoveWrite(uart, self.x, self.y, "         ")
             self.y = self.y +2 
-            MoveWrite(uart, self.x, self.y, " |++U++| ")
+            MoveWrite(uart, self.x, self.y, " |++X++| ")
         elif (self.x <= 5):
             self.dir = +1
             self.x = self.x + self.dir
             MoveWrite(uart, self.x, self.y, "         ")
             self.y = self.y + 2 
-            MoveWrite(uart, self.x, self.y, " |++U++| ")
+            MoveWrite(uart, self.x, self.y, " |++X++| ")
         else:
             self.x = self.x + self.dir
-            MoveWrite(uart, self.x, self.y, " |++U++| ")
+            MoveWrite(uart, self.x, self.y, " |++X++| ")
             
     def GameOver(self, y):
         if (self.y >= 5):
