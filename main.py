@@ -114,9 +114,9 @@ class Ennemies():
         else:
             self.x = self.x + self.dir
             MoveWrite(uart, self.x, self.y, " |++X++| ")
-        
+
         # DEBUG
-        print(self.x, self.y)
+        # print(self.x, self.y)
 
         
 def initFleet(Fleet):
@@ -152,6 +152,7 @@ vt100.clear_screen(uart)
 SetBorders() 
 
 Fleet = [0,0,0,0,0]
+Breaked = [0,0,0,0,0]
 initFleet(Fleet)
 
 while True:
@@ -182,6 +183,25 @@ while True:
             MoveWrite(uart, posX+3, -i, " ")
         wait_pin_change(push_button, 0)
 
+        # Destruction ennemies
+        if(posX-1 == (Fleet[0].x)):
+            Breaked[0] = Breaked[0] + 1
+        elif(posX-1 == (Fleet[1].x)):
+            Breaked[1] = Breaked[1] + 1 
+        elif(posX-1 == (Fleet[2].x)):
+            Breaked[2] = Breaked[2] + 1 
+        elif(posX-1 == (Fleet[3].x)):
+            Breaked[3] = Breaked[3] + 1 
+        elif(posX-1 == (Fleet[4].x)):
+            Breaked[4] = Breaked[4] + 1 
+
+    # IF WIN
+    if (Breaked[0] == Breaked[1] == Breaked[2] == Breaked[3] == Breaked[4] & Breaked[0] != 0):
+        vt100.clear_screen(uart)
+        vt100.move(uart, posX, posY)
+        uart.write("VICTORY")
+        break
+
     # IF LOSE
     if (Fleet[0].y >= lose):
         vt100.clear_screen(uart)
@@ -194,4 +214,7 @@ while True:
         uart.write("LOSE - GAME OVER")
         break
 
+    # DEBUG
+    # print(Breaked)
+    
     pyb.delay(100)
