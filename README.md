@@ -39,8 +39,8 @@ La carte doit également être connectée au PC par ses connecteurs mini et micr
 
 ## Controles  
 - Le vaisseau joueur se déplace en penchant la carte électronique à gauche ou à droite, autour de l'axe Y de l'accéléromètre LIS3DSH présent sur celle-ci (connecteur mini-USB vers l'avant / connecteur mini-USB vers l'arrière). Une LED rouge ou verte s'allume selon la direction de déplacement du vaisseau.
-- Le tir s'effectue grâce au bouton poussoir USER présent sur la carte électronique.
+- Le tir s'effectue grâce au bouton poussoir bleu USER présent sur la carte électronique.
 
 ![image](https://user-images.githubusercontent.com/72506988/119268551-c3b81400-bbf3-11eb-8312-23051fa8f0ea.png)
 
-*Attention : redémarrer une partie requiert l'éjection de PYBFLASH avant de cliquer sur RESET sur la carte*
+Redémarrer une partie en appuyant sur le bouton RESET de la carte*
