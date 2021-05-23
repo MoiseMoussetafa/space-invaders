@@ -4,16 +4,6 @@ Il s'agit d'un jeu Space Invaders, en microPython sur la carte électronique STM
 ![image](https://user-images.githubusercontent.com/72506988/119268372-f281ba80-bbf2-11eb-9806-0e0ea20bcd89.png)
 
 
-## Controles  
-- Le vaisseau joueur se déplace en penchant la carte électronique à gauche ou à droite, autour de l'axe Y de l'accéléromètre LIS3DSH présent sur celle-ci (connecteur mini-USB vers l'avant / connecteur mini-USB vers l'arrière)
-- Le tir s'effectue grâce au bouton poussoir USER présent sur la carte électronique.
-
-![image](https://user-images.githubusercontent.com/72506988/119268551-c3b81400-bbf3-11eb-8312-23051fa8f0ea.png)
-
-*Attention : redémarrer une partie requiert l'éjection de PYBFLASH avant de cliquer sur RESET sur la carte*
-
----
-
 ## Flasher la carte en uPython (Windows)
 
 - Installer Python3.7 ou plus sur le Microsoft Store
@@ -32,6 +22,7 @@ Placer un jumper entre VDD et BOOT0 pour activer le mode DFU, puis brancher la c
 
 Une fois le flashage terminé, remplacer les fichiers **boot.py** et **main.py** de la carte flashée apparaissant comme une clé USB par ceux présents dans ce repo.
 
+---
 
 ## Utilisation
 Ce jeu nécessite l'utilisation d'une console en utilisant une connection UART.  
@@ -42,5 +33,13 @@ La carte doit également être connectée au PC par ses connecteurs mini et micr
 ![image](https://user-images.githubusercontent.com/72506988/119269216-d4b65480-bbf6-11eb-919c-2f88485033ca.png)  
 *Remplacer COMX par le COM utilisé par l'UART de la carte, visible depuis le gestionnaire de périphériques*
 
-- Une fois configuré, cliquer sur **OPEN**
+- Une fois configuré, cliquer sur **OPEN**. Le terminal qui s'ouvre sert d'écran pour le Space Invaders.
 
+
+## Controles  
+- Le vaisseau joueur se déplace en penchant la carte électronique à gauche ou à droite, autour de l'axe Y de l'accéléromètre LIS3DSH présent sur celle-ci (connecteur mini-USB vers l'avant / connecteur mini-USB vers l'arrière). Une LED rouge ou verte s'allume selon la direction de déplacement du vaisseau.
+- Le tir s'effectue grâce au bouton poussoir USER présent sur la carte électronique.
+
+![image](https://user-images.githubusercontent.com/72506988/119268551-c3b81400-bbf3-11eb-8312-23051fa8f0ea.png)
+
+*Attention : redémarrer une partie requiert l'éjection de PYBFLASH avant de cliquer sur RESET sur la carte*
