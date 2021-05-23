@@ -4,6 +4,10 @@ Il s'agit d'un jeu Space Invaders, en microPython sur la carte électronique STM
 
 ![image](https://user-images.githubusercontent.com/72506988/119268372-f281ba80-bbf2-11eb-9806-0e0ea20bcd89.png)
 
+**But de jeu :** Détruire les 5 vaisseaux ennemis !  
+Les ennemis ne tirent pas et ne sont sensibles qu'en leur coeur.  
+Les ennemis sont liés entre eux : il est nécessaire de les toucher chacun le même nombre de fois pour les détruire tous d'un coup.   
+Si la flotte ennemie s'approche trop près, c'est perdu !
 
 ## Flasher la carte en uPython (Windows)
 
